@@ -1,0 +1,39 @@
+<div class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh;">
+    <h1 class="mb-4 text-primary" style="font-size: 2.5rem;">Calculo de média - Facens</h1>
+    <div class="card" style="width: 320px;">
+        <div class="card-body">
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">AC1</span>
+                </div>
+                <input type="text" [(ngModel)]="nota1" class="form-control" aria-label="Exemplo do tamanho do input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">AC2</span>
+                </div>
+                <input type="text" [(ngModel)]="nota2" class="form-control" aria-label="Exemplo do tamanho do input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">AG</span>
+                </div>
+                <input type="text" [(ngModel)]="nota3" class="form-control" aria-label="Exemplo do tamanho do input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">AF</span>
+                </div>
+                <input type="text" [(ngModel)]="nota4" class="form-control" aria-label="Exemplo do tamanho do input"
+                    aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <button class="btn btn-primary w-100 mb-3" (click)="calcularMedia()">Calcular Média</button>
+            <div *ngIf="media !== null" class="alert alert-info text-center">
+                Média: {{ media }}
+            </div>
+        </div>
+    </div>
+</div>

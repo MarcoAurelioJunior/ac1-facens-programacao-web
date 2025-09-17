@@ -1,0 +1,65 @@
+<div class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh;">
+  <h1 class="mb-4 text-primary" style="font-size: 2.5rem;">Apólice</h1>
+
+  <div class="card" style="width: 50%;">
+    <div class="card-body">
+      <form class="d-flex flex-column justify-content-center align-items-center">
+
+        <!-- Nome e Sobrenome -->
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Nome e sobrenome</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Nome" [(ngModel)]="segurado.nome" name="nome">
+          <input type="text" class="form-control" placeholder="Sobrenome" [(ngModel)]="segurado.sobrenome" name="sobrenome">
+        </div>
+
+        <!-- Sexo -->
+        <div class="mt-3">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="sexo" id="radioMasculino" [(ngModel)]="segurado.sexo" value="M">
+            <label class="form-check-label" for="radioMasculino">Masculino</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="sexo" id="radioFeminino" [(ngModel)]="segurado.sexo" value="F">
+            <label class="form-check-label" for="radioFeminino">Feminino</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="sexo" id="radioOutros" [(ngModel)]="segurado.sexo" value="O">
+            <label class="form-check-label" for="radioOutros">Outros</label>
+          </div>
+        </div>
+
+        <!-- Idade -->
+        <div class="input-group mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Idade</span>
+          </div>
+          <input type="number" class="form-control" placeholder="Idade" [(ngModel)]="segurado.idade" name="idade">
+        </div>
+
+        <!-- Valor -->
+        <div class="input-group mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">R$</span>
+          </div>
+          <input type="number" class="form-control" [(ngModel)]="segurado.valor" name="valor" placeholder="Valor do automóvel">
+          <div class="input-group-append">
+            <span class="input-group-text">.00</span>
+          </div>
+        </div>
+
+        <!-- Botão -->
+        <button type="button" class="btn btn-primary mt-4 w-100" (click)="calcularApolice()">Enviar</button>
+
+        <!-- Resultado -->
+        <div *ngIf="valorApolice !== null" class="alert alert-info text-center mt-3">
+          Valor do automóvel: {{ valorApolice }}
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
